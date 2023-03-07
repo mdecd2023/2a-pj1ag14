@@ -1,1 +1,1 @@
-var tipuesearch = {"pages": [{'title': 'About', 'text': '成員:張昱棠(41023153)，王翔楷(41023113) \n 倉儲: https://github.com/mdecd2023/2a-pj1ag14 \xa0 \n 網站: https://mdecd2023.github.io/2a-pj1ag14 \xa0\xa0', 'tags': '', 'url': 'About.html'}]};
+var tipuesearch = {"pages": [{'title': 'About', 'text': '成員:張昱棠(41023153)，王翔楷(41023113) \n 倉儲: https://github.com/mdecd2023/2a-pj1ag14 \xa0 \n 網站: https://mdecd2023.github.io/2a-pj1ag14 \xa0\xa0 \n \n \n \n', 'tags': '', 'url': 'About.html'}]};
