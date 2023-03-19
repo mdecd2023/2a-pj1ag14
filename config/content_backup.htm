@@ -100,5 +100,15 @@
 <p><span>這個函數是模擬程式的初始化函數，它只會被執行一次，當模擬程式啟動時。這個函數主要是執行一些初始化設置，例如設置模型的基礎物體、感測器和控制器，以及創建一些繪圖對象和UI元素。</span></p>
 <p><span><strong>bubbleRobBase=sim.getObject('.')</strong><br/></span></p>
 <p><span>這行代碼會獲取模型的根物體的句柄。在這個例子中，模型的根物體是代表機器人的物體。</span></p>
-<p><span>leftMotor=sim.getObject(<span style="color: #339966;">"./leftMotor"</span>)<br/>rightMotor=sim.getObject(<span style="color: #339966;">"./rightMotor"</span>)<br/>noseSensor=sim.getObject(<span style="color: #339966;">"./sensingNose"</span>)<br/></span></p>
-<p><span></span></p>
+<p><span><strong>leftMotor=sim.getObject</strong>(<span style="color: #339966;">"./leftMotor"</span>)<br/><strong>rightMotor=sim.getObject</strong>(<span style="color: #339966;">"./rightMotor"</span>)<br/><strong>noseSensor=sim.getObject</strong>(<span style="color: #339966;">"./sensingNose"</span>)<br/></span></p>
+<p><span>這些行會獲取左右馬達和前方感測器的句柄。這些句柄會在後續的代碼中用於控制馬達和讀取感測器。</span></p>
+<p><span><strong>minMaxSpeed={50*math.pi/180,300*math.pi/180}</strong><br/></span></p>
+<p>這行會定義最小和最大速度。在這個例子中，速度是以弧度每秒為單位表示的，最小速度為50度每秒，最大速度為300度每秒。</p>
+<p><strong>backUntilTime=-1<br/></strong></p>
+<p><span>這行代碼定義了一個變數</span><code>backUntilTime</code><span>，用於在後續的代碼中區分機器人是向前移動還是向後移動。</span></p>
+<p><strong>robotCollection=sim.createCollection(0)</strong><br/><strong>sim.addItemToCollection(robotCollection,sim.handle_tree,bubbleRobBase,0)</strong></p>
+<p><span>這些行代碼用於創建一個物體集合並將機器人物體添加到其中。這將使得感測器能夠檢測到機器人周圍的其他物</span></p>
+<p><strong>function sysCall_actuation()：</strong></p>
+<p>這個函數控制BubbleRob的行動。它首先讀取接近傳感器的數據，以檢測是否有東西在BubbleRob的前方。如果傳感器檢測到障礙物，則將backUntilTime設置為當前仿真時間加上4秒，表示BubbleRob現在處於倒車模式。否則，如果backUntilTime小於當前仿真時間，則BubbleRob處於前進模式，並且將左右馬達的目標速度設置為speed。否則，BubbleRob處於倒車模式，並且左右馬達的目標速度設置為一定的值，以實現向後行駛的效果。</p>
+<p><strong>function sysCall_cleanup()：</strong></p>
+<p><span>這個函數在仿真結束時被調用，以清理代碼中使用的任何資源。在這個例子中，它摧毀了UI對象，以避免內存洩漏。</span></p>

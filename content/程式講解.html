@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='w3.html'>w3</a><ul class='dropdown'><li><a href='張昱棠41023153心得.html'>張昱棠41023153心得</a><li><a href='王翔楷41023113心得.html'>王翔楷41023113心得</a></li></ul><li class='has-children'><a href='tutorial1.html'>tutorial1</a><ul class='dropdown'><li><a href='心得.html'>心得</a><li><a href='問題.html'>問題</a><li><a href='程式講解.html'>程式講解</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='w3.html'>w3</a><ul class='dropdown'><li><a href='張昱棠41023153心得.html'>張昱棠41023153心得</a><li><a href='王翔楷41023113心得.html'>王翔楷41023113心得</a></li></ul><li class='has-children'><a href='tutorial1.html'>tutorial1</a><ul class='dropdown'><li><a href='心得.html'>心得</a><li><a href='問題.html'>問題</a><li><a href='程式講解.html'>程式講解</a></li></ul><li><a href='專案規劃.html'>專案規劃</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,7 +141,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">問題 << <a href='問題.html'>Previous</a> <br /><h1>程式講解</h1>
+    <div id="tipue_search_content">問題 << <a href='問題.html'>Previous</a> <a href='專案規劃.html'>Next</a> >> 專案規劃<br /><h1>程式講解</h1>
 <p><img alt="" height="195" src="./../images/螢幕擷取畫面 2023-03-19 181214.png" width="1215"/>首先這是一個Lua語言，在CoppeliaSim仿真環境中運行。該腳本定義了兩個函數：<strong>sysCall_init</strong>和<strong>sysCall_vision</strong>。</p>
 <p>sysCall_init函數是仿真環境初始化時自動調用的函數，該函數目前是空的，即不執行任何操作。</p>
 <p>sysCall_vision函數是CoppeliaSim的視覺模組塊（Vision Module）在每次運行時會調用的函數，該函數的作用是對視覺傳感器的圖像進行邊緣檢測（edge detection）。具體來說，函數中的三個函數調用分別為：</p>
@@ -170,7 +170,8 @@ img.add_border {
 <p><strong>function sysCall_actuation()：</strong></p>
 <p>這個函數控制BubbleRob的行動。它首先讀取接近傳感器的數據，以檢測是否有東西在BubbleRob的前方。如果傳感器檢測到障礙物，則將backUntilTime設置為當前仿真時間加上4秒，表示BubbleRob現在處於倒車模式。否則，如果backUntilTime小於當前仿真時間，則BubbleRob處於前進模式，並且將左右馬達的目標速度設置為speed。否則，BubbleRob處於倒車模式，並且左右馬達的目標速度設置為一定的值，以實現向後行駛的效果。</p>
 <p><strong>function sysCall_cleanup()：</strong></p>
-<p><span>這個函數在仿真結束時被調用，以清理代碼中使用的任何資源。在這個例子中，它摧毀了UI對象，以避免內存洩漏。</span></p><br />問題 << <a href='問題.html'>Previous</a> </div>
+<p><span>這個函數在仿真結束時被調用，以清理代碼中使用的任何資源。在這個例子中，它摧毀了UI對象，以避免內存洩漏。</span></p>
+<br />問題 << <a href='問題.html'>Previous</a> <a href='專案規劃.html'>Next</a> >> 專案規劃</div>
         
     <!-- footer -->
       <div class="container">
