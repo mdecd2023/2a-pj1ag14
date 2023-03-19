@@ -87,8 +87,18 @@
 <p>sysCall_init函數是仿真環境初始化時自動調用的函數，該函數目前是空的，即不執行任何操作。</p>
 <p>sysCall_vision函數是CoppeliaSim的視覺模組塊（Vision Module）在每次運行時會調用的函數，該函數的作用是對視覺傳感器的圖像進行邊緣檢測（edge detection）。具體來說，函數中的三個函數調用分別為：</p>
 <ul>
-<li>simVision.sensorImgToWorkImg(inData.handle)：將視覺傳感器的圖像複製到工作圖像中；</li>
-<li>simVision.edgeDetectionOnWorkImg(inData.handle,0.2)：對工作圖像進行邊緣檢測，檢測閾值為0.2；</li>
-<li>simVision.workImgToSensorImg(inData.handle)：將處理後的工作圖像複製回視覺傳感器的圖像緩衝區中。</li>
+<li><strong>simVision.sensorImgToWorkImg(inData.handle)</strong>：將視覺傳感器的圖像複製到工作圖像中；</li>
+<li><strong>simVision.edgeDetectionOnWorkImg(inData.handle,0.2)</strong>：對工作圖像進行邊緣檢測，檢測閾值為0.2；</li>
+<li><strong>simVision.workImgToSensorImg(inData.handle)</strong>：將處理後的工作圖像複製回視覺傳感器的圖像緩衝區中。</li>
 </ul>
 <p>其中，inData是一個包含了視覺模組塊的一些信息的table對象，例如handle（視覺傳感器的句柄）等。simVision是CoppeliaSim中提供的用於處理視覺相關任務的庫。</p>
+<p></p>
+<p><img alt="" height="995" src="/images/FireShot Capture 008 - pjcopsim - mde.tw.jpg" width="1097"/></p>
+<p><span style="color: #3366ff;">function</span> <strong>speedChange_callback(ui,id,newVal)</strong><br/><strong> speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100</strong><br/><span style="color: #3366ff;">end</span></p>
+<p><span>這個函數會在使用者調整了速度控制UI元素後被呼叫。它接收3個參數：</span><code>ui</code><span>，這是UI元素的句柄；</span><code>id</code><span>，這是UI元素的ID；</span><code>newVal</code><span>，這是UI元素的新值。函數會根據新值計算出一個速度值</span><code>speed</code><span>。</span></p>
+<p><span><span style="color: #3366ff;">function</span> <strong>sysCall_init()</strong><br/></span></p>
+<p><span>這個函數是模擬程式的初始化函數，它只會被執行一次，當模擬程式啟動時。這個函數主要是執行一些初始化設置，例如設置模型的基礎物體、感測器和控制器，以及創建一些繪圖對象和UI元素。</span></p>
+<p><span><strong>bubbleRobBase=sim.getObject('.')</strong><br/></span></p>
+<p><span>這行代碼會獲取模型的根物體的句柄。在這個例子中，模型的根物體是代表機器人的物體。</span></p>
+<p><span>leftMotor=sim.getObject(<span style="color: #339966;">"./leftMotor"</span>)<br/>rightMotor=sim.getObject(<span style="color: #339966;">"./rightMotor"</span>)<br/>noseSensor=sim.getObject(<span style="color: #339966;">"./sensingNose"</span>)<br/></span></p>
+<p><span></span></p>
