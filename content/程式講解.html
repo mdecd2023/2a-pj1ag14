@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,22 +141,19 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">王翔楷41023113心得 << <a href='王翔楷41023113心得.html'>Previous</a> <a href='心得.html'>Next</a> >> 心得<br /><h1>tutorial1</h1>
-<p><a href="./../downloads/BubbleRub tutorial presentation.pptx">ag14 tutorial presentation</a></p>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"><source src="./../downloads/bubbleRob1.mp4" type="video/mp4"/></video>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"><source src="./../downloads/bubbleRobfinal.mp4" type="video/mp4"/></video></div>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"><source src="./../downloads/Finish.mp4" type="video/mp4"/></video></div>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/h21ydWL7ZG8" title="YouTube video player" width="560"></iframe>
-<p><a href="./../downloads/bubbleRob.ttt">bubbleRob本體</a></p>
-<p><a href="./../downloads/slider.ttt">slider</a></p>
-<p><a href="./../downloads/wheels.ttt">wheels</a></p>
-<p></p>
-<p></p>
-</div>
-<div id="gtx-trans" style="position: absolute; left: -82px; top: 72.075px;">
+    <div id="tipue_search_content">問題 << <a href='問題.html'>Previous</a> <br /><h1>程式講解</h1>
+<p><img alt="" height="195" src="./../images/螢幕擷取畫面 2023-03-19 181214.png" width="1215"/>首先這是一個Lua語言，在CoppeliaSim仿真環境中運行。該腳本定義了兩個函數：<strong>sysCall_init</strong>和<strong>sysCall_vision</strong>。</p>
+<p>sysCall_init函數是仿真環境初始化時自動調用的函數，該函數目前是空的，即不執行任何操作。</p>
+<p>sysCall_vision函數是CoppeliaSim的視覺模組塊（Vision Module）在每次運行時會調用的函數，該函數的作用是對視覺傳感器的圖像進行邊緣檢測（edge detection）。具體來說，函數中的三個函數調用分別為：</p>
+<ul>
+<li><strong>simVision.sensorImgToWorkImg(inData.handle)</strong>：將視覺傳感器的圖像複製到工作圖像中；</li>
+<li><strong>simVision.edgeDetectionOnWorkImg(inData.handle,0.2)</strong>：對工作圖像進行邊緣檢測，檢測閾值為0.2；</li>
+<li><strong>simVision.workImgToSensorImg(inData.handle)</strong>：將處理後的工作圖像複製回視覺傳感器的圖像緩衝區中。</li>
+</ul>
+<p>其中，inData是一個包含了視覺模組塊的一些信息的table對象，例如handle（視覺傳感器的句柄）等。simVision是CoppeliaSim中提供的用於處理視覺相關任務的庫。</p>
+<div id="gtx-trans" style="position: absolute; left: 36px; top: 455.575px;">
 <div class="gtx-trans-icon"></div>
-</div>
-<br />王翔楷41023113心得 << <a href='王翔楷41023113心得.html'>Previous</a> <a href='心得.html'>Next</a> >> 心得</div>
+</div><br />問題 << <a href='問題.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

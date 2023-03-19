@@ -39,12 +39,12 @@
 <p><span><span class="ui-provider yg b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak" dir="ltr">製作初期其實並不順利，我們這組和另外兩個同學一起從七點弄到凌晨一點才回家，過程中最難克服的是對軟體的不熟悉，隔天利用下午沒課的時間慢慢摸索，最後才順利完成建置，再利用晚上上課的時間向老師請教感測器內部程式的問題後回到座位上研究，最後才順利完成功課。</span></span></p>
 <p><span></span></p>
 <h2>問題</h2>
-<p>1.coppeliasim中的scene與model有何不同?</p>
+<p>1.<span style="background-color: #ffff00;"><strong>coppeliasim中的scene與model有何不同?</strong></span></p>
 <p>在CoppeliaSim中，Scene是一個包含多個物理仿真模型和其他環境元素（例如燈光、相機、傳感器等）的虛擬環境。這些模型可以是機器人、機械臂、傳送帶、機場跑道等等。 Scene通常用於仿真應用程序的開發和測試。而Model是CoppeliaSim中的一個概念，是一種可以單獨保存的物理仿真模型，可以將其作為場景中的組成部分進行導入和編輯。 Model包含一個或多個物體，例如一個機器人、一個傳感器、一個關節等等。 Model可以在場景中多次使用，也可以在不同場景之間共享。簡而言之，Scene是包含多個物理仿真模型和其他環境元素的虛擬環境，而Model是可以單獨保存的物理仿真模型，可以在不同場景中共享使用。</p>
 <p>整理:</p>
 <p><span style="color: #0000ff;">Scene:是一個包含多個物理仿真模型和其他環境元素（例如燈光、相機、傳感器等）的虛擬環境，Scene通常用於仿真應用程序的開發和測試</span><br/><span style="color: #0000ff;">model:是一種可以單獨保存的物理仿真模型，可以將其作為場景中的組成部分進行導入和編輯，可以在不同場景中共享使用。</span></p>
 <p></p>
-<p>2.在CoppeliaSim scene中，何謂clean model?</p>
+<p>2.<span style="background-color: #ffff00;"><strong>在CoppeliaSim scene中，何謂clean model?</strong></span></p>
 <p>在CoppeliaSim中，"clean model" 通常指的是優化模型的過程，通過這個過程可以減少模型中無用的物件和多餘的細節，從而提高模擬的效率。</p>
 <p>具體來說，進行模型優化可以通過以下步驟完成：</p>
 <ol>
@@ -59,13 +59,13 @@
 </li>
 </ol>
 <p><span style="color: #0000ff;">簡單來說，通過進行模型優化可以使CoppeliaSim的運行速度更快，從而更加有效地進行模擬和測試。</span></p>
-<p>3.如何在CoppeliaSim中，利用Lua以及Python建立primitive type object，並利用程式設定物件位置?</p>
+<p>3.<span style="background-color: #ffff00;"><strong>如何在CoppeliaSim中，利用Lua以及Python建立primitive type object，並利用程式設定物件位置?</strong></span></p>
 <p>以下是Lua語言範例:</p>
 <p>-- 創建立方體並設定位置<br/>cubeHandle = sim.createPureShape(1, 3, {0.1, 0.1, 0.1}, 0.1)<br/>sim.setObjectPosition(cubeHandle, -1, {0, 0, 0.5})</p>
 <p>以下python語言範例:</p>
 <p># 導入sim模塊<br/>import sim</p>
 <p># 創建立方體並設定位置<br/>cubeHandle = sim.simCreatePureShape(1, 3, [0.1, 0.1, 0.1], 0.1)<br/>sim.simSetObjectPosition(cubeHandle, -1, [0, 0, 0.5])</p>
-<p>4.CoppeliaSim.ttt檔案格式與.simscene.xml檔案格式有何不同?</p>
+<p>4.<span style="background-color: #ffff00;"><strong>CoppeliaSim.ttt檔案格式與.simscene.xml檔案格式有何不同?</strong></span></p>
 <p>CoppeliaSim中的場景文件有兩種格式：.ttt和.simscene.xml。這兩種格式的主要區別在於它們的內容和用途不同。</p>
 <p>.ttt格式是CoppeliaSim自有的文件格式，它是一個二進制文件，包含了所有場景、對象和設置的信息。這種格式可以通過CoppeliaSim的GUI界面直接打開和編輯，也可以通過Lua腳本編程方式創建、編輯和保存。.ttt格式具有以下特點：</p>
 <ul>
@@ -82,4 +82,13 @@
 <li>可以被其他模擬軟件讀取和使用。</li>
 </ul>
 <p>總的來說，.ttt格式更適合在CoppeliaSim中進行場景的創建和編輯，而.simscene.xml格式則更適合與其他軟件進行數據交換和共享。</p>
-<p></p>
+<h2>程式講解</h2>
+<p><img alt="" height="195" src="/images/螢幕擷取畫面 2023-03-19 181214.png" width="1215"/>首先這是一個Lua語言，在CoppeliaSim仿真環境中運行。該腳本定義了兩個函數：<strong>sysCall_init</strong>和<strong>sysCall_vision</strong>。</p>
+<p>sysCall_init函數是仿真環境初始化時自動調用的函數，該函數目前是空的，即不執行任何操作。</p>
+<p>sysCall_vision函數是CoppeliaSim的視覺模組塊（Vision Module）在每次運行時會調用的函數，該函數的作用是對視覺傳感器的圖像進行邊緣檢測（edge detection）。具體來說，函數中的三個函數調用分別為：</p>
+<ul>
+<li>simVision.sensorImgToWorkImg(inData.handle)：將視覺傳感器的圖像複製到工作圖像中；</li>
+<li>simVision.edgeDetectionOnWorkImg(inData.handle,0.2)：對工作圖像進行邊緣檢測，檢測閾值為0.2；</li>
+<li>simVision.workImgToSensorImg(inData.handle)：將處理後的工作圖像複製回視覺傳感器的圖像緩衝區中。</li>
+</ul>
+<p>其中，inData是一個包含了視覺模組塊的一些信息的table對象，例如handle（視覺傳感器的句柄）等。simVision是CoppeliaSim中提供的用於處理視覺相關任務的庫。</p>

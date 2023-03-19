@@ -82,4 +82,16 @@
 <li>可以被其他模擬軟件讀取和使用。</li>
 </ul>
 <p>總的來說，.ttt格式更適合在CoppeliaSim中進行場景的創建和編輯，而.simscene.xml格式則更適合與其他軟件進行數據交換和共享。</p>
-<p></p>
+<h2>程式講解</h2>
+<p><img alt="" height="195" src="/images/螢幕擷取畫面 2023-03-19 181214.png" width="1215"/>首先這是一個Lua語言，在CoppeliaSim仿真環境中運行。該腳本定義了兩個函數：<strong>sysCall_init</strong>和<strong>sysCall_vision</strong>。</p>
+<p>sysCall_init函數是仿真環境初始化時自動調用的函數，該函數目前是空的，即不執行任何操作。</p>
+<p>sysCall_vision函數是CoppeliaSim的視覺模組塊（Vision Module）在每次運行時會調用的函數，該函數的作用是對視覺傳感器的圖像進行邊緣檢測（edge detection）。具體來說，函數中的三個函數調用分別為：</p>
+<ul>
+<li><strong>simVision.sensorImgToWorkImg(inData.handle)</strong>：將視覺傳感器的圖像複製到工作圖像中；</li>
+<li><strong>simVision.edgeDetectionOnWorkImg(inData.handle,0.2)</strong>：對工作圖像進行邊緣檢測，檢測閾值為0.2；</li>
+<li><strong>simVision.workImgToSensorImg(inData.handle)</strong>：將處理後的工作圖像複製回視覺傳感器的圖像緩衝區中。</li>
+</ul>
+<p>其中，inData是一個包含了視覺模組塊的一些信息的table對象，例如handle（視覺傳感器的句柄）等。simVision是CoppeliaSim中提供的用於處理視覺相關任務的庫。</p>
+<div id="gtx-trans" style="position: absolute; left: 36px; top: 455.575px;">
+<div class="gtx-trans-icon"></div>
+</div>
