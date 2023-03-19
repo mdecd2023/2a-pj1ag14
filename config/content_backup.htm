@@ -41,8 +41,9 @@
 <h2>問題</h2>
 <p>1.coppeliasim中的scene與model有何不同?</p>
 <p>在CoppeliaSim中，Scene是一個包含多個物理仿真模型和其他環境元素（例如燈光、相機、傳感器等）的虛擬環境。這些模型可以是機器人、機械臂、傳送帶、機場跑道等等。 Scene通常用於仿真應用程序的開發和測試。而Model是CoppeliaSim中的一個概念，是一種可以單獨保存的物理仿真模型，可以將其作為場景中的組成部分進行導入和編輯。 Model包含一個或多個物體，例如一個機器人、一個傳感器、一個關節等等。 Model可以在場景中多次使用，也可以在不同場景之間共享。簡而言之，Scene是包含多個物理仿真模型和其他環境元素的虛擬環境，而Model是可以單獨保存的物理仿真模型，可以在不同場景中共享使用。</p>
-<p>CoppeliaSim.ttt 檔案格式與.simscene.Xml 檔案格式有何不同?<br/>CoppeliaSim.ttt文件是CoppeliaSim的二進位場景文件格式，可以保存整個CoppeliaSim場景，包括物體、場景參數、腳本、視圖等信息。這種格式的文件通常用於在CoppeliaSim之間共享模型或將模型發佈到網絡上供他人下載。</p>
-<p>.simscene.xml文件是CoppeliaSim的XML場景文件格式，也可以保存整個CoppeliaSim場景，但以純文本形式存儲。這種格式的文件通常用於版本控制和代碼編輯器中的源代碼控制。</p>
+<p>整理:</p>
+<p><span style="color: #0000ff;">Scene:是一個包含多個物理仿真模型和其他環境元素（例如燈光、相機、傳感器等）的虛擬環境，Scene通常用於仿真應用程序的開發和測試</span><br/><span style="color: #0000ff;">model:是一種可以單獨保存的物理仿真模型，可以將其作為場景中的組成部分進行導入和編輯，可以在不同場景中共享使用。</span></p>
+<p></p>
 <p>2.在CoppeliaSim scene中，何謂clean model?</p>
 <p>在CoppeliaSim中，"clean model" 通常指的是優化模型的過程，通過這個過程可以減少模型中無用的物件和多餘的細節，從而提高模擬的效率。</p>
 <p>具體來說，進行模型優化可以通過以下步驟完成：</p>
@@ -57,11 +58,28 @@
 <p>簡化細節：當模型中存在過多的細節時，會使模擬變得非常緩慢。因此，可以將一些不必要的細節簡化或者刪除，從而提高模擬的效率。</p>
 </li>
 </ol>
-<p>總體來說，通過進行模型優化可以使CoppeliaSim的運行速度更快，從而更加有效地進行模擬和測試。</p>
+<p><span style="color: #0000ff;">簡單來說，通過進行模型優化可以使CoppeliaSim的運行速度更快，從而更加有效地進行模擬和測試。</span></p>
 <p>3.如何在CoppeliaSim中，利用Lua以及Python建立primitive type object，並利用程式設定物件位置?</p>
 <p>以下是Lua語言範例:</p>
 <p>-- 創建立方體並設定位置<br/>cubeHandle = sim.createPureShape(1, 3, {0.1, 0.1, 0.1}, 0.1)<br/>sim.setObjectPosition(cubeHandle, -1, {0, 0, 0.5})</p>
 <p>以下python語言範例:</p>
 <p># 導入sim模塊<br/>import sim</p>
 <p># 創建立方體並設定位置<br/>cubeHandle = sim.simCreatePureShape(1, 3, [0.1, 0.1, 0.1], 0.1)<br/>sim.simSetObjectPosition(cubeHandle, -1, [0, 0, 0.5])</p>
-<p>1111</p>
+<p>4.CoppeliaSim.ttt檔案格式與.simscene.xml檔案格式有何不同?</p>
+<p>CoppeliaSim中的場景文件有兩種格式：.ttt和.simscene.xml。這兩種格式的主要區別在於它們的內容和用途不同。</p>
+<p>.ttt格式是CoppeliaSim自有的文件格式，它是一個二進制文件，包含了所有場景、對象和設置的信息。這種格式可以通過CoppeliaSim的GUI界面直接打開和編輯，也可以通過Lua腳本編程方式創建、編輯和保存。.ttt格式具有以下特點：</p>
+<ul>
+<li>包含完整的場景、對象和設置的信息；</li>
+<li>可以包含Lua腳本代碼和編程接口；</li>
+<li>支持多種版本的CoppeliaSim；</li>
+<li>不能通過文本編輯器直接查看和編輯。</li>
+</ul>
+<p>.simscene.xml格式則是一種通用的XML文件格式，其中包含了CoppeliaSim場景的描述信息。這種格式可以通過文本編輯器或者其他XML編輯器進行編輯，也可以通過Python等腳本語言讀取和編輯。.simscene.xml格式具有以下特點：</p>
+<ul>
+<li>是一種通用的XML文件格式；</li>
+<li>可以通過文本編輯器或者其他XML編輯器進行編輯；</li>
+<li>不包含Lua腳本代碼和編程接口；</li>
+<li>可以被其他模擬軟件讀取和使用。</li>
+</ul>
+<p>總的來說，.ttt格式更適合在CoppeliaSim中進行場景的創建和編輯，而.simscene.xml格式則更適合與其他軟件進行數據交換和共享。</p>
+<p></p>
