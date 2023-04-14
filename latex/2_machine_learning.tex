@@ -17,22 +17,20 @@
 \label{類神經網路關係}
 \end{center}
 \end{figure}
-\subsection{啟動函數}
-啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，神經元的計算只會有線性組合，這樣的類神經網路缺乏活性而且記憶性差；啟動函數能讓神經元計算呈現非線性，讓類神經網路因為計算的非線性而提高整個網路的活性和記憶性。\\
-以下介紹幾種較為常見的啟動函數及其特性：
+\subsection{本體建立}
+本體及感測器是進行專案的重要基礎，各項參數要設定得宜才能得到正確的結果。\\
+以下介紹幾種較為常見的參數設定及其特性：
 \begin{itemize}
-%=----------Sigmoid      Function----------=%
-\item Sigmoid Function(圖.\ref{SigmoidFunction})：\\
-輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。
-$$\sigma(x)=\frac{1}{1+e^{-x}}$$
+%=----------Body is respondable----------=%
+\item Body is respondable (圖.\ref{ Body is respondable 、Body is dynamic })：\\
+respond是回答，回應的意思。可響應形狀將導致與其他可響應形狀的碰撞反應。即respondable屬性用於控制物體的碰撞回應，nonrespondable物體在與其它物體發生碰撞時，物理引擎不會進行計算，會出現穿透的現象。
 
-%=----------SigmoidPrime Function----------=%
-SigmoidPrime Function(圖.\ref{SigmoidFunction}，紅色的)是從Sigmoid Function(圖.\ref{SigmoidFunction}，藍色)微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
-$$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
+%=----------Body is dynamic----------=%
+SigmoidPrime Function(圖.\ref{SigmoidFunction}，紅色的)是從Sigmoid Function(圖.\ref{SigmoidFunction} )具有動態屬性的物體會在重力影響下墜落或在其它外力、力矩作用下發生運動狀態的改變。而靜態物體則會在場景中靜止不動，如地面，或跟隨其父節點運動（或跟隨其父節點在場景層次結構中的移動）。
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=16cm]{SigmoidFunction}
-\caption{\Large SigmoidFunction}\label{SigmoidFunction}
+\caption{\Large Body is respondable 、Body is dynamic }\label{Body is respondable 、Body is dynamic }
 \end{center}
 \end{figure}
 \\
