@@ -13,12 +13,12 @@
 \begin{figure}
 \begin{center}
 \includegraphics[width=16cm]{類神經網路關係}
-\caption{\Large 類神經網路關係}
-\label{類神經網路關係}
+\caption{\Large 本體建立}
+\label{本體建立}
 \end{center}
 \end{figure}
 \subsection{本體建立}
-本體及感測器是進行專案的重要基礎，各項參數要設定得宜才能得到正確的結果。\\
+本體如(圖.\ref{本體建立}) 及感測器是進行專案的重要基礎，各項參數要設定得宜才能得到正確的結果。\\
 以下介紹幾種較為常見的參數設定及其特性：
 \begin{itemize}
 %=----------Body is respondable----------=%
@@ -26,7 +26,7 @@
 respond是回答，回應的意思。可響應形狀將導致與其他可響應形狀的碰撞反應。即respondable屬性用於控制物體的碰撞回應，nonrespondable物體在與其它物體發生碰撞時，物理引擎不會進行計算，會出現穿透的現象。
 
 %=----------Body is dynamic----------=%
-SigmoidPrime Function(圖.\ref{SigmoidFunction}，紅色的)是從Sigmoid Function(圖.\ref{SigmoidFunction} )具有動態屬性的物體會在重力影響下墜落或在其它外力、力矩作用下發生運動狀態的改變。而靜態物體則會在場景中靜止不動，如地面，或跟隨其父節點運動（或跟隨其父節點在場景層次結構中的移動）。
+Body is dynamic (圖.\ref{Body is respondable 、Body is dynamic} )是具有動態屬性的物體會在重力影響下墜落或在其它外力、力矩作用下發生運動狀態的改變。而靜態物體則會在場景中靜止不動，如地面，或跟隨其父節點運動（或跟隨其父節點在場景層次結構中的移動）。
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=16cm]{SigmoidFunction}
