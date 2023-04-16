@@ -1,0 +1,31 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \Large 設定 }}{2}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 本體建立}}{3}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \Large Body is respondable 、Body is dynamic}}{4}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \Large Collidable、Measurable、Detectable}}{5}{figure.2.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \Large 程式講解}}{6}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \Large 程式講解2}}{7}{figure.3.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large 球場繪製}}{10}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large 導入球場}}{11}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large 加入感測器}}{11}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \Large 加入bubbleRob}}{12}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \Large 加入球體}}{12}{figure.5.5}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large 偵測用於遠端操控的bubbleRob以及左右馬達的變值}}{13}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large 設定sensor1、2為door1、2}}{13}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 計時器時間及得分設定}}{13}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \Large 設定UI介面}}{14}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \Large 感測器偵測到物體UI介面加分及位置重製}}{14}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \Large 完成後UI介面展示}}{16}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \Large 導入python程式}}{16}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces \Large 本地控制程式}}{17}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces \Large 查看本地IP}}{18}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces \Large IP config}}{18}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces \Large 遠端控制程式}}{19}{figure.6.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 完成作業}}{20}{figure.7.1}%
+\contentsfinish 
